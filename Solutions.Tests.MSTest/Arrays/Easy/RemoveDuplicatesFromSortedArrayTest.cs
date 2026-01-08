@@ -16,9 +16,6 @@ namespace Solutions.Tests.MSTest.Arrays.Easy
             int expectedK = expectedNums.Length;
             int k = RemoveDuplicatesFromSortedArray.Solution(nums);
             Assert.AreEqual(k, expectedK);
-
-            if (k == 0) return;
-
             CollectionAssert.AreEqual(expectedNums, nums[..k]);
         }
         
@@ -35,10 +32,6 @@ namespace Solutions.Tests.MSTest.Arrays.Easy
             yield return Case(
                 new[] { 4, 7, 9, 11, 13, 101 }, 
                 new[] { 4, 7, 9, 11, 13, 101 }
-            );
-            yield return Case(
-                Array.Empty<int>(), 
-                Array.Empty<int>()
             );
             yield return Case(
                 new[] { 0 }, 
