@@ -1,8 +1,6 @@
-using System;
+using Solutions.Arrays.Easy;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Solutions.Arrays.Easy;
 
 namespace Solutions.Tests.MSTest.Arrays.Easy
 {
