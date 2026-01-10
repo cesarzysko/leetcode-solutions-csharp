@@ -8,7 +8,11 @@ namespace Solutions.Tests.MSTest.Arrays.Easy
     public class RotateArrayTest
     {
         [DataTestMethod]
-        [DynamicData(nameof(RotateArrayTestData.GetTestData), typeof(RotateArrayTestData))]
+        [DynamicData(
+            nameof(RotateArrayTestData.GetTestData), 
+            typeof(RotateArrayTestData),
+            DynamicDataSourceType.Method
+        )]
         public void Solution_RotateArray_Test(int[] nums, int k, int[] expectedNums)
         {
             RotateArray.Solution(nums, k);

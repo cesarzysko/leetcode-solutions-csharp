@@ -10,7 +10,8 @@ namespace Solutions.Tests.MSTest.Arrays.Easy
         [DataTestMethod]
         [DynamicData(
             nameof(BestTimeToBuyAndSellStocksIITestData.GetTestData), 
-            typeof(BestTimeToBuyAndSellStocksIITestData)
+            typeof(BestTimeToBuyAndSellStocksIITestData),
+            DynamicDataSourceType.Method
         )]
         public void Solution_GetMaxProfit_Test(int[] prices, int expectedProfit)
         {
