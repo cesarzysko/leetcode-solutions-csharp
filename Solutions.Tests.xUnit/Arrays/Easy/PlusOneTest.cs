@@ -1,4 +1,4 @@
-using Solutions.Arrays.Easy.PlusOne;
+using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
 using Xunit;
 

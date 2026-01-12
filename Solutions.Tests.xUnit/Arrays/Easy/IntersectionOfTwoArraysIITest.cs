@@ -1,4 +1,4 @@
-using Solutions.Arrays.Easy.IntersectionOfTwoArraysII;
+using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
 using Xunit;
 

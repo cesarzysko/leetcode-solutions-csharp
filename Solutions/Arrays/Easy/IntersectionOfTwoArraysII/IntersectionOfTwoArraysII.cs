@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Solutions.Arrays.Easy.IntersectionOfTwoArraysII
+namespace Solutions.Arrays.Easy
 {
     public static class IntersectionOfTwoArraysII
     {
@@ -41,7 +41,7 @@ namespace Solutions.Arrays.Easy.IntersectionOfTwoArraysII
             return intersection.ToArray();
         }
         
-        private class IntWrapper
+        private sealed class IntWrapper
         {
             public int Value;
         

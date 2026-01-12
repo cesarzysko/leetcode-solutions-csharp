@@ -1,6 +1,6 @@
 using System;
 
-namespace Solutions.Arrays.Easy.PlusOne
+namespace Solutions.Arrays.Easy
 {
     public static class PlusOne
     {
