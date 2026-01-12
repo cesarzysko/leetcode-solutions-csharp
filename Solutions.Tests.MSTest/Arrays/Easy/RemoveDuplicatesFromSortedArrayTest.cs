@@ -7,11 +7,10 @@ namespace Solutions.Tests.MSTest.Arrays.Easy
     [TestClass]
     public class RemoveDuplicatesFromSortedArrayTest
     {
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(
-            nameof(RemoveDuplicatesFromSortedArrayTestData.GetTestData), 
-            typeof(RemoveDuplicatesFromSortedArrayTestData),
-            DynamicDataSourceType.Method
+            nameof(RemoveDuplicatesFromSortedArrayTestData.GetTestData),
+            typeof(RemoveDuplicatesFromSortedArrayTestData)
         )]
         public void Solution_RemoveDuplicates_Test(int[] nums, int[] expectedNums)
         {

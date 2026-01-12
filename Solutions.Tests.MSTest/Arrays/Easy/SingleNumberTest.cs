@@ -7,11 +7,10 @@ namespace Solutions.Tests.MSTest.Arrays.Easy
     [TestClass]
     public class SingleNumberTest
     {
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(
-            nameof(SingleNumberTestData.GetTestData), 
-            typeof(SingleNumberTestData), 
-            DynamicDataSourceType.Method
+            nameof(SingleNumberTestData.GetTestData),
+            typeof(SingleNumberTestData)
         )]
         public void Solution_SingleNumber_Test(int[] nums, int expectedNum)
         {
