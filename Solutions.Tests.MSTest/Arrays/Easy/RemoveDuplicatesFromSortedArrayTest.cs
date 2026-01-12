@@ -17,7 +17,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy
         {
             int expectedK = expectedNums.Length;
             int k = RemoveDuplicatesFromSortedArray.Solution(nums);
-            Assert.AreEqual(k, expectedK);
+            Assert.AreEqual(expectedK, k);
             CollectionAssert.AreEqual(expectedNums, nums[..k]);
         }
     }
