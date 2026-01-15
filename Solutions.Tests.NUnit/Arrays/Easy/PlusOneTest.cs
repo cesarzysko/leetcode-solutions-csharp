@@ -17,8 +17,8 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
             int eK = expectedDigits.Length;
             Assert.Multiple(() =>
             {
-                Assert.That(eK, Is.EqualTo(rK));
-                Assert.That(expectedDigits, Is.EqualTo(result));
+                Assert.That(rK, Is.EqualTo(eK));
+                Assert.That(result, Is.EqualTo(expectedDigits));
             });
         }
     }

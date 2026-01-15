@@ -12,7 +12,7 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
         public void Solution_SingleNumber_Test(int[] nums, int expectedNum)
         {
             int result = SingleNumber.Solution(nums);
-            Assert.That(expectedNum, Is.EqualTo(result));
+            Assert.That(result, Is.EqualTo(expectedNum));
         }
     }
 }

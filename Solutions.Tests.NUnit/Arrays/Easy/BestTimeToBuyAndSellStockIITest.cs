@@ -12,7 +12,7 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
         public void Solution_GetMaxProfit_Test(int[] prices, int expectedProfit)
         {
             int result = BestTimeToBuyAndSellStockII.Solution(prices);
-            Assert.That(expectedProfit, Is.EqualTo(result));
+            Assert.That(result, Is.EqualTo(expectedProfit));
         }
     }
 }

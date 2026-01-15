@@ -12,7 +12,7 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
         public void Solution_ContainsDuplicate_Test(int[] nums, bool expectedResult)
         {
             bool result = ContainsDuplicate.Solution(nums);
-            Assert.That(expectedResult, Is.EqualTo(result));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

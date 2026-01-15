@@ -15,8 +15,8 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
 
             int eK = expectedNums.Length;
             int rK = nums.Length;
-            Assert.That(eK, Is.EqualTo(rK));
-            Assert.That(expectedNums, Is.EqualTo(nums));
+            Assert.That(rK, Is.EqualTo(eK));
+            Assert.That(nums, Is.EqualTo(expectedNums));
         }
     }
 }

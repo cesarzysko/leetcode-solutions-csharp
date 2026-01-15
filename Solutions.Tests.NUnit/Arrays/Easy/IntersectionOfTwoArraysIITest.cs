@@ -15,7 +15,7 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
 
             int rK = result.Length;
             int eK = expectedIntersection.Length;
-            Assert.That(eK, Is.EqualTo(rK));
+            Assert.That(rK, Is.EqualTo(eK));
 
             short[] counts = new short[1001];
 

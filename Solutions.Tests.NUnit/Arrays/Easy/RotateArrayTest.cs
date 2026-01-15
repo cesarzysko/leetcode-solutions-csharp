@@ -12,7 +12,7 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
         public void Solution_RotateArray_Test(int[] nums, int k, int[] expectedNums)
         {
             RotateArray.Solution(nums, k);
-            Assert.That(expectedNums, Is.EqualTo(nums));
+            Assert.That(nums, Is.EqualTo(expectedNums));
         }
     }
 }

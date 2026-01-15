@@ -13,8 +13,8 @@ namespace Solutions.Tests.NUnit.Arrays.Easy
         {
             int expectedK = expectedNums.Length;
             int k = RemoveDuplicatesFromSortedArray.Solution(nums);
-            Assert.That(k, Is.EqualTo(expectedK));
-            Assert.That(expectedNums, Is.EqualTo(nums[..k]));
+            Assert.That(expectedK, Is.EqualTo(k));
+            Assert.That(nums[..k], Is.EqualTo(expectedNums));
         }
     }
 }
