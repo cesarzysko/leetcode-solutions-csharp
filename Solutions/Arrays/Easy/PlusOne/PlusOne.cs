@@ -1,15 +1,17 @@
 using System;
 
-namespace Solutions.Arrays.Easy
+namespace Solutions.Arrays.Easy;
+
+public static class PlusOne
 {
-    public static class PlusOne
+    public static int[] Solution(int[] digits) 
     {
-        public static int[] Solution(int[] digits) 
-        {
-            return Recursive(digits, digits.Length - 1);
-        }
-    
-        private static int[] Recursive(int[] digits, int lastIndex)
+        return Recursive(digits, digits.Length - 1);
+    }
+
+    private static int[] Recursive(int[] digits, int lastIndex)
+    {
+        while (true)
         {
             if (digits[lastIndex] == 9)
             {
@@ -20,16 +22,17 @@ namespace Solutions.Arrays.Easy
                     {
                         digits[i + 1] = digits[i];
                     }
-                
+
                     digits[1] = 0;
                     digits[0] = 1;
                     return digits;
                 }
-            
+
                 digits[lastIndex] = 0;
-                return Recursive(digits, lastIndex - 1);
+                --lastIndex;
+                continue;
             }
-        
+
             ++digits[lastIndex];
             return digits;
         }

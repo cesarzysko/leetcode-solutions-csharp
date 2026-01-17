@@ -1,21 +1,19 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
 
-namespace Solutions.Tests.MSTest.Arrays.Easy
+namespace Solutions.Tests.MSTest.Arrays.Easy;
+
+[TestClass]
+public class SingleNumberTest
 {
-    [TestClass]
-    public class SingleNumberTest
+    [TestMethod]
+    [DynamicData(
+        nameof(SingleNumberTestData.GetTestData),
+        typeof(SingleNumberTestData)
+    )]
+    public void Solution_SingleNumber_Test(int[] nums, int expectedNum)
     {
-        [TestMethod]
-        [DynamicData(
-            nameof(SingleNumberTestData.GetTestData),
-            typeof(SingleNumberTestData)
-        )]
-        public void Solution_SingleNumber_Test(int[] nums, int expectedNum)
-        {
-            int result = SingleNumber.Solution(nums);
-            Assert.AreEqual(expectedNum, result);
-        }
+        int result = SingleNumber.Solution(nums);
+        Assert.AreEqual(expectedNum, result);
     }
 }

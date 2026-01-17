@@ -1,54 +1,48 @@
 using System.Collections.Generic;
 
-namespace Solutions.Arrays.Easy
+namespace Solutions.Arrays.Easy;
+
+public static class IntersectionOfTwoArraysII
 {
-    public static class IntersectionOfTwoArraysII
+    public static int[] Solution(int[] nums1, int[] nums2) 
     {
-        public static int[] Solution(int[] nums1, int[] nums2) 
+        int n = nums1.Length;
+        List<int> intersection = [];
+        Dictionary<int, IntWrapper> dict = [];
+        
+        for (int i = 0; i < n; ++i)
         {
-            int n = nums1.Length;
-            List<int> intersection = new List<int>();
-            Dictionary<int, IntWrapper> dict = new Dictionary<int, IntWrapper>();
-        
-            for (int i = 0; i < n; ++i)
+            int key = nums1[i];
+            if (dict.TryGetValue(key, out IntWrapper? occurrences))
             {
-                int key = nums1[i];
-                if (dict.TryGetValue(key, out IntWrapper wrapper))
-                {
-                    ++wrapper.Value;
-                }
-                else
-                {
-                    dict.Add(key, new IntWrapper(1));
-                }
+                ++occurrences.Value;
             }
-        
-            n = nums2.Length;
-        
-            for (int i = 0; i < n; ++i)
+            else
             {
-                int key = nums2[i];
-                if (dict.TryGetValue(key, out IntWrapper occurrences))
-                {
-                    intersection.Add(key);
-                    if ((--occurrences.Value) == 0)
-                    {
-                        dict.Remove(key);
-                    }
-                }
+                dict.Add(key, new IntWrapper(1));
             }
-        
-            return intersection.ToArray();
         }
         
-        private sealed class IntWrapper
-        {
-            public int Value;
+        n = nums2.Length;
         
-            public IntWrapper(int val)
+        for (int i = 0; i < n; ++i)
+        {
+            int key = nums2[i];
+            if (dict.TryGetValue(key, out IntWrapper? occurrences))
             {
-                Value = val;
+                intersection.Add(key);
+                if ((--occurrences.Value) == 0)
+                {
+                    dict.Remove(key);
+                }
             }
         }
+        
+        return intersection.ToArray();
+    }
+        
+    private sealed class IntWrapper(int val)
+    {
+        public int Value = val;
     }
 }

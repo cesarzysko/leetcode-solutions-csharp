@@ -1,24 +1,23 @@
-namespace Solutions.Arrays.Easy
+namespace Solutions.Arrays.Easy;
+
+public static class MoveZeroes
 {
-    public static class MoveZeroes
+    public static void Solution(int[] nums) 
     {
-        public static void Solution(int[] nums) 
+        int n = nums.Length;
+        int w = 0;
+        for (int i = 0; i < n; ++i)
         {
-            int n = nums.Length;
-            int w = 0;
-            for (int i = 0; i < n; ++i)
+            int num = nums[i];
+            if (num != 0)
             {
-                int num = nums[i];
-                if (num != 0)
-                {
-                    nums[w++] = num;
-                }
+                nums[w++] = num;
             }
+        }
         
-            while (w < n)
-            {
-                nums[w++] = 0;
-            }
+        while (w < n)
+        {
+            nums[w++] = 0;
         }
     }
 }

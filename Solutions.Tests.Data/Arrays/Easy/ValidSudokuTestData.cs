@@ -1,48 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Solutions.Tests.Data.Arrays.Easy
+namespace Solutions.Tests.Data.Arrays.Easy;
+
+public class ValidSudokuTestData : IEnumerable<object[]>
 {
-    public class ValidSudokuTestData : IEnumerable<object[]>
-    {
-        public static IEnumerable<object[]> GetTestData()
-            => new ValidSudokuTestData();
+    public static IEnumerable<object[]> GetTestData()
+        => new ValidSudokuTestData();
         
-        public IEnumerator<object[]> GetEnumerator()
-        {
-            yield return Case(
-                new[] {
-                    new[] { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
-                    new[] { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
-                    new[] { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
-                    new[] { '8', '.', '.', '.', '6', '.', '.', '.', '3' },
-                    new[] { '4', '.', '.', '8', '.', '3', '.', '.', '1' },
-                    new[] { '7', '.', '.', '.', '2', '.', '.', '.', '6' },
-                    new[] { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
-                    new[] { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
-                    new[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
-                },
-                true
-            );
-            yield return Case(
-                new[] {
-                    new[] { '8', '3', '.', '.', '7', '.', '.', '.', '.' },
-                    new[] { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
-                    new[] { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
-                    new[] { '8', '.', '.', '.', '6', '.', '.', '.', '3' },
-                    new[] { '4', '.', '.', '8', '.', '3', '.', '.', '1' },
-                    new[] { '7', '.', '.', '.', '2', '.', '.', '.', '6' },
-                    new[] { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
-                    new[] { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
-                    new[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
-                },
-                false
-            );
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
-        private static object[] Case(char[][] board, bool expectedResult)
-            => new object[] { board, expectedResult };
+    public IEnumerator<object[]> GetEnumerator()
+    {
+        yield return Case(
+            [
+                ['5', '3', '.', '.', '7', '.', '.', '.', '.'],
+                ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+                ['.', '9', '8', '.', '.', '.', '.', '6', '.'],
+                ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
+                ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
+                ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
+                ['.', '6', '.', '.', '.', '.', '2', '8', '.'],
+                ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+                ['.', '.', '.', '.', '8', '.', '.', '7', '9']
+            ],
+            true
+        );
+        yield return Case(
+            [
+                ['8', '3', '.', '.', '7', '.', '.', '.', '.'],
+                ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+                ['.', '9', '8', '.', '.', '.', '.', '6', '.'],
+                ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
+                ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
+                ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
+                ['.', '6', '.', '.', '.', '.', '2', '8', '.'],
+                ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+                ['.', '.', '.', '.', '8', '.', '.', '7', '9']
+            ],
+            false
+        );
     }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+    private static object[] Case(char[][] board, bool expectedResult)
+        => [board, expectedResult];
 }

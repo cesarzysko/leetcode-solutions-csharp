@@ -1,12 +1,11 @@
 using System;
 
-namespace Solutions.Strings.Easy
+namespace Solutions.Strings.Easy;
+
+public static class ReverseString
 {
-    public static class ReverseString
+    public static void Solution(char[] s) 
     {
-        public static void Solution(char[] s) 
-        {
-            Array.Reverse(s);
-        }
+        Array.Reverse(s);
     }
 }

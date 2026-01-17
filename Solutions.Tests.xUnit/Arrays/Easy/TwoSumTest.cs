@@ -1,21 +1,19 @@
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-using Xunit;
 
-namespace Solutions.Tests.xUnit.Arrays.Easy
+namespace Solutions.Tests.xUnit.Arrays.Easy;
+
+public class TwoSumTest
 {
-    public class TwoSumTest
+    [Theory]
+    [ClassData(typeof(TwoSumTestData))]
+    public void Solution_TwoSum_Test(int[] nums, int target, int[] expectedResult)
     {
-        [Theory]
-        [ClassData(typeof(TwoSumTestData))]
-        public void Solution_TwoSum_Test(int[] nums, int target, int[] expectedResult)
-        {
-            int[] actualResult = TwoSum.Solution(nums, target);
-            Assert.Equal(2, actualResult.Length);
-            Assert.Equal(expectedResult, actualResult);
+        int[] actualResult = TwoSum.Solution(nums, target);
+        Assert.Equal(2, actualResult.Length);
+        Assert.Equal(expectedResult, actualResult);
             
-            int actualTarget = nums[actualResult[0]] + nums[actualResult[1]];
-            Assert.Equal(target, actualTarget);
-        }
+        int actualTarget = nums[actualResult[0]] + nums[actualResult[1]];
+        Assert.Equal(target, actualTarget);
     }
 }

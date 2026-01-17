@@ -1,19 +1,17 @@
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-using Xunit;
 
-namespace Solutions.Tests.xUnit.Arrays.Easy
+namespace Solutions.Tests.xUnit.Arrays.Easy;
+
+public class RemoveDuplicatesFromSortedArrayTest
 {
-    public class RemoveDuplicatesFromSortedArrayTest
+    [Theory]
+    [ClassData(typeof(RemoveDuplicatesFromSortedArrayTestData))]
+    public void Solution_RemoveDuplicates_Test(int[] nums, int[] expectedNums)
     {
-        [Theory]
-        [ClassData(typeof(RemoveDuplicatesFromSortedArrayTestData))]
-        public void Solution_RemoveDuplicates_Test(int[] nums, int[] expectedNums)
-        {
-            int expectedK = expectedNums.Length;
-            int k = RemoveDuplicatesFromSortedArray.Solution(nums);
-            Assert.Equal(expectedK, k);
-            Assert.Equal(nums[..k], expectedNums);
-        }
+        int expectedK = expectedNums.Length;
+        int k = RemoveDuplicatesFromSortedArray.Solution(nums);
+        Assert.Equal(expectedK, k);
+        Assert.Equal(nums[..k], expectedNums);
     }
 }

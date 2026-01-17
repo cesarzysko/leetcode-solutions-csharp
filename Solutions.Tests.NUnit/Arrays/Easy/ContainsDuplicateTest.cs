@@ -1,18 +1,16 @@
-using NUnit.Framework;
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
 
-namespace Solutions.Tests.NUnit.Arrays.Easy
+namespace Solutions.Tests.NUnit.Arrays.Easy;
+
+[TestFixture]
+public class ContainsDuplicateTest
 {
-    [TestFixture]
-    public class ContainsDuplicateTest
+    [Test]
+    [TestCaseSource(typeof(ContainsDuplicateTestData))]
+    public void Solution_ContainsDuplicate_Test(int[] nums, bool expectedResult)
     {
-        [Test]
-        [TestCaseSource(typeof(ContainsDuplicateTestData))]
-        public void Solution_ContainsDuplicate_Test(int[] nums, bool expectedResult)
-        {
-            bool result = ContainsDuplicate.Solution(nums);
-            Assert.That(result, Is.EqualTo(expectedResult));
-        }
+        bool result = ContainsDuplicate.Solution(nums);
+        Assert.That(result, Is.EqualTo(expectedResult));
     }
 }
