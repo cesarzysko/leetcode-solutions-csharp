@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class RemoveDuplicatesFromSortedArrayTest
+public sealed class RemoveDuplicatesFromSortedArrayTest
 {
     [Theory]
     [ClassData(typeof(RemoveDuplicatesFromSortedArrayTestData))]

@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class TwoSumTest
+public sealed class TwoSumTest
 {
     [Theory]
     [ClassData(typeof(TwoSumTestData))]

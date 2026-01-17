@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Strings.Easy;
 
-public class FirstUniqueCharacterInAStringTestData : IEnumerable<object[]>
+public sealed class FirstUniqueCharacterInAStringTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new FirstUniqueCharacterInAStringTestData();

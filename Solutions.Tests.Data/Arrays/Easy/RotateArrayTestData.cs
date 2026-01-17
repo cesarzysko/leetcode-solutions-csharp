@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Arrays.Easy;
 
-public class RotateArrayTestData : IEnumerable<object[]>
+public sealed class RotateArrayTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new RotateArrayTestData();

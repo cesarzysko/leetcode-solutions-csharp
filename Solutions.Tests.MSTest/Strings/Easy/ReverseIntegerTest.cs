@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Strings.Easy;
 namespace Solutions.Tests.MSTest.Strings.Easy;
 
 [TestClass]
-public class ReverseIntegerTest
+public sealed class ReverseIntegerTest
 {
     [TestMethod]
     [DynamicData(

@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Strings.Easy;
 namespace Solutions.Tests.MSTest.Strings.Easy;
 
 [TestClass]
-public class FirstUniqueCharacterInAStringTest
+public sealed class FirstUniqueCharacterInAStringTest
 {
     [TestMethod]
     [DynamicData(

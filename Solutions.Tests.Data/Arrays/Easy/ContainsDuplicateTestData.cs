@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Arrays.Easy;
 
-public class ContainsDuplicateTestData : IEnumerable<object[]>
+public sealed class ContainsDuplicateTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new ContainsDuplicateTestData();

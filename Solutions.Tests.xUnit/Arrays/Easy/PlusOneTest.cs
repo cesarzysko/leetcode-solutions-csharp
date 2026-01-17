@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class PlusOneTest
+public sealed class PlusOneTest
 {
     [Theory]
     [ClassData(typeof(PlusOneTestData))]

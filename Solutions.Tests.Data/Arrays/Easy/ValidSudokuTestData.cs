@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Arrays.Easy;
 
-public class ValidSudokuTestData : IEnumerable<object[]>
+public sealed class ValidSudokuTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new ValidSudokuTestData();

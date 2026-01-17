@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Arrays.Easy;
 
-public class BestTimeToBuyAndSellStocksIITestData : IEnumerable<object[]>
+public sealed class BestTimeToBuyAndSellStocksIITestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new BestTimeToBuyAndSellStocksIITestData();

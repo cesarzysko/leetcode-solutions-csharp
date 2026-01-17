@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 namespace Solutions.Tests.MSTest.Arrays.Easy;
 
 [TestClass]
-public class ValidSudokuTest
+public sealed class ValidSudokuTest
 {
     [TestMethod]
     [DynamicData(

@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Strings.Easy;
 namespace Solutions.Tests.NUnit.Strings.Easy;
 
 [TestFixture]
-public class ReverseStringTest
+public sealed class ReverseStringTest
 {
     [Test]
     [TestCaseSource(typeof(ReverseStringTestData))]

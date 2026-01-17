@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 namespace Solutions.Tests.MSTest.Arrays.Easy;
 
 [TestClass]
-public class PlusOneTest
+public sealed class PlusOneTest
 {
     [TestMethod]
     [DynamicData(

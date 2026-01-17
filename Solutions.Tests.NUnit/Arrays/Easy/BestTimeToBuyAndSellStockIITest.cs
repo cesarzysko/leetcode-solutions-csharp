@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 namespace Solutions.Tests.NUnit.Arrays.Easy;
 
 [TestFixture]
-public class BestTimeToBuyAndSellStockIITest
+public sealed class BestTimeToBuyAndSellStockIITest
 {
     [Test]
     [TestCaseSource(typeof(BestTimeToBuyAndSellStocksIITestData))]

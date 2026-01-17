@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class RotateImageTest
+public sealed class RotateImageTest
 {
     [Theory]
     [ClassData(typeof(RotateImageTestData))]

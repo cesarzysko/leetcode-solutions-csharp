@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Strings.Easy;
 
 namespace Solutions.Tests.xUnit.Strings.Easy;
 
-public class FirstUniqueCharacterInAStringTest
+public sealed class FirstUniqueCharacterInAStringTest
 {
     [Theory]
     [ClassData(typeof(FirstUniqueCharacterInAStringTestData))]

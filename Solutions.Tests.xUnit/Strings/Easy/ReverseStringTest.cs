@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Strings.Easy;
 
 namespace Solutions.Tests.xUnit.Strings.Easy;
 
-public class ReverseStringTest
+public sealed class ReverseStringTest
 {
     [Theory]
     [ClassData(typeof(ReverseStringTestData))]

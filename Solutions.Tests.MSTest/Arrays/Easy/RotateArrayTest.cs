@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 namespace Solutions.Tests.MSTest.Arrays.Easy;
 
 [TestClass]
-public class RotateArrayTest
+public sealed class RotateArrayTest
 {
     [TestMethod]
     [DynamicData(

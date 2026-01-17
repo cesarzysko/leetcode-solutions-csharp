@@ -4,7 +4,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 namespace Solutions.Tests.NUnit.Arrays.Easy;
 
 [TestFixture]
-public class PlusOneTest
+public sealed class PlusOneTest
 {
     [Test]
     [TestCaseSource(typeof(PlusOneTestData))]

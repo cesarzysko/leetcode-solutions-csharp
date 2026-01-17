@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class ValidSudokuTest
+public sealed class ValidSudokuTest
 {
     [Theory]
     [ClassData(typeof(ValidSudokuTestData))]

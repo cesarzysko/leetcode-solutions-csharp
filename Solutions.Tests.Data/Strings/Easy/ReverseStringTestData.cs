@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Strings.Easy;
 
-public class ReverseStringTestData : IEnumerable<object[]>
+public sealed class ReverseStringTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object> GetTestData()
         => new ReverseStringTestData();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Arrays.Easy;
 
-public class TwoSumTestData : IEnumerable<object[]>
+public sealed class TwoSumTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new TwoSumTestData();

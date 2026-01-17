@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class BestTimeToBuyAndSellStockIITest
+public sealed class BestTimeToBuyAndSellStockIITest
 {
     [Theory]
     [ClassData(typeof(BestTimeToBuyAndSellStocksIITestData))]

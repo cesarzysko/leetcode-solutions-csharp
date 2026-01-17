@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class ContainsDuplicateTest
+public sealed class ContainsDuplicateTest
 {
     [Theory]
     [ClassData(typeof(ContainsDuplicateTestData))]

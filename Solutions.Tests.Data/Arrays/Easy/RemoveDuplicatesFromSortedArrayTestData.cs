@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Arrays.Easy;
 
-public class RemoveDuplicatesFromSortedArrayTestData : IEnumerable<object[]>
+public sealed class RemoveDuplicatesFromSortedArrayTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new RemoveDuplicatesFromSortedArrayTestData();

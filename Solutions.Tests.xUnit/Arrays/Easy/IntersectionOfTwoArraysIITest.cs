@@ -3,7 +3,7 @@ using Solutions.Tests.Data.Arrays.Easy;
 
 namespace Solutions.Tests.xUnit.Arrays.Easy;
 
-public class IntersectionOfTwoArraysIITest
+public sealed class IntersectionOfTwoArraysIITest
 {
     [Theory]
     [ClassData(typeof(IntersectionOfTwoArraysIITestData))]

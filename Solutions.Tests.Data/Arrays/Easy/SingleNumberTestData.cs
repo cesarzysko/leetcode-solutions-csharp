@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solutions.Tests.Data.Arrays.Easy;
 
-public class SingleNumberTestData : IEnumerable<object[]>
+public sealed class SingleNumberTestData : IEnumerable<object[]>
 {
     public static IEnumerable<object[]> GetTestData()
         => new SingleNumberTestData();
