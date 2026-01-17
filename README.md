@@ -3,7 +3,7 @@ A collection of C# solutions to LeetCode problems, accompanied by unit tests usi
 
 **.NET version: 8.0**
 
-**C# version: 8.0**
+**C# version: 12.0**
 
 ## How Problems Are Included
 - Only solution code, tests and test data are included in the repository.
