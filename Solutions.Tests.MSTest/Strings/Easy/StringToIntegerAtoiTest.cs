@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Strings.Easy;
 public class StringToIntegerAtoiTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(StringToIntegerAtoiTestData.GetTestData),
-        typeof(StringToIntegerAtoiTestData)
-    )]
+    [FromTestData(typeof(StringToIntegerAtoiTestData))]
     public void Solution_StringToInteger_Test(string s, int expectedResult)
     {
         int result = StringToIntegerAtoi.Solution(s);

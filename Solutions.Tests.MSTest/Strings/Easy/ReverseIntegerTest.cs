@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Strings.Easy;
 public sealed class ReverseIntegerTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(ReverseIntegerTestData.GetTestData),
-        typeof(ReverseIntegerTestData)
-    )]
+    [FromTestData(typeof(ReverseIntegerTestData))]
     public void Solution_ReverseInteger_Test(int x, int expectedResult)
     {
         int result = ReverseInteger.Solution(x);

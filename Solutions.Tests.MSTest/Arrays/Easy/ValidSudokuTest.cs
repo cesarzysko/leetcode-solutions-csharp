@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class ValidSudokuTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(ValidSudokuTestData.GetTestData),
-        typeof(ValidSudokuTestData)
-    )]
+    [FromTestData(typeof(ValidSudokuTestData))]
     public void Solution_ValidSudoku_Test(char[][] board, bool expectedResult)
     {
         bool actualResult = ValidSudoku.Solution(board);

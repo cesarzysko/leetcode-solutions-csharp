@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class SingleNumberTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(SingleNumberTestData.GetTestData),
-        typeof(SingleNumberTestData)
-    )]
+    [FromTestData(typeof(SingleNumberTestData))]
     public void Solution_SingleNumber_Test(int[] nums, int expectedNum)
     {
         int result = SingleNumber.Solution(nums);

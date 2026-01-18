@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class RemoveDuplicatesFromSortedArrayTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(RemoveDuplicatesFromSortedArrayTestData.GetTestData),
-        typeof(RemoveDuplicatesFromSortedArrayTestData)
-    )]
+    [FromTestData(typeof(RemoveDuplicatesFromSortedArrayTestData))]
     public void Solution_RemoveDuplicates_Test(int[] nums, int[] expectedNums)
     {
         int expectedK = expectedNums.Length;

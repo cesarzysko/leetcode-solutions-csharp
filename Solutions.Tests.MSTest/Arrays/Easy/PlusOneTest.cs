@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class PlusOneTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(PlusOneTestData.GetTestData),
-        typeof(PlusOneTestData)
-    )]
+    [FromTestData(typeof(PlusOneTestData))]
     public void Solution_PlusOne_Test(int[] digits, int[] expectedDigits)
     {
         int[] result = PlusOne.Solution(digits);

@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Strings.Easy;
 public class ValidAnagramTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(ValidAnagramTestData.GetTestData),
-        typeof(ValidAnagramTestData)
-    )]
+    [FromTestData(typeof(ValidAnagramTestData))]
     public void Solution_ValidAnagram_Test(string s, string t, bool expectedResult)
     {
         bool firstResult = ValidAnagram.Solution(s, t);

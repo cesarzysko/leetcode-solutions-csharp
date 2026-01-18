@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class TwoSumTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(TwoSumTestData.GetTestData),
-        typeof(TwoSumTestData)
-    )]
+    [FromTestData(typeof(TwoSumTestData))]
     public void Solution_TwoSum_Test(int[] nums, int target, int[] expectedResult)
     {
         int[] actualResult = TwoSum.Solution(nums, target);

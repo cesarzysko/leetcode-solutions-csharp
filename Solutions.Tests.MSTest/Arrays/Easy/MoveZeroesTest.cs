@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class MoveZeroesTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(MoveZeroesTestData.GetTestData),
-        typeof(MoveZeroesTestData)
-    )]
+    [FromTestData(typeof(MoveZeroesTestData))]
     public void Solution_MoveZeroes_Test(int[] nums, int[] expectedNums)
     {
         MoveZeroes.Solution(nums);

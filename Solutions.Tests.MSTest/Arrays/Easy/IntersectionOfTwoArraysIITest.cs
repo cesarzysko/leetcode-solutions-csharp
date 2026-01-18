@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class IntersectionOfTwoArraysIITest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(IntersectionOfTwoArraysIITestData.GetTestData),
-        typeof(IntersectionOfTwoArraysIITestData)
-    )]
+    [FromTestData(typeof(IntersectionOfTwoArraysIITestData))]
     public void Solution_Intersection_Test(int[] nums1, int[] nums2, int[] expectedIntersection)
     {
         int[] result = IntersectionOfTwoArraysII.Solution(nums1, nums2);

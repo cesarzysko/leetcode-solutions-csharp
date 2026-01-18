@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Strings.Easy;
 public sealed class ReverseStringTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(ReverseStringTestData.GetTestData),
-        typeof(ReverseStringTestData)
-    )]
+    [FromTestData(typeof(ReverseStringTestData))]
     public void Solution_ReverseString_Test(char[] text, char[] expectedText)
     {
         ReverseString.Solution(text);

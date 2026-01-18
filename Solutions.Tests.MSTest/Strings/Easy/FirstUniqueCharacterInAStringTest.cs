@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Strings.Easy;
 public sealed class FirstUniqueCharacterInAStringTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(FirstUniqueCharacterInAStringTestData.GetTestData),
-        typeof(FirstUniqueCharacterInAStringTestData)
-    )]
+    [FromTestData(typeof(FirstUniqueCharacterInAStringTestData))]
     public void Solution_FirstUniqueChar_Test(string s, int expectedChIndex)
     {
         int chIndex = FirstUniqueCharacterInAString.Solution(s);

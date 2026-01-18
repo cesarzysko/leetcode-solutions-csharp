@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Strings.Easy;
 public class ValidPalindromeTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(ValidPalindromeTestData.GetTestData),
-        typeof(ValidPalindromeTestData)
-    )]
+    [FromTestData(typeof(ValidPalindromeTestData))]
     public void Solution_ValidPalindrome_Test(string s, bool expectedResult)
     {
         bool result = ValidPalindrome.Solution(s);

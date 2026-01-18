@@ -7,10 +7,7 @@ namespace Solutions.Tests.MSTest.Arrays.Easy;
 public sealed class ContainsDuplicateTest
 {
     [TestMethod]
-    [DynamicData(
-        nameof(ContainsDuplicateTestData.GetTestData),
-        typeof(ContainsDuplicateTestData)
-    )]
+    [FromTestData(typeof(ContainsDuplicateTestData))]
     public void Solution_ContainsDuplicate_Test(int[] nums, bool expectedResult)
     {
         bool result = ContainsDuplicate.Solution(nums);
