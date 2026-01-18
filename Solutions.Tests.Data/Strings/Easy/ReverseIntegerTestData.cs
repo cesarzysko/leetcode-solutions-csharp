@@ -1,43 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace Solutions.Tests.Data.Strings.Easy;
 
-public sealed class ReverseIntegerTestData : IEnumerable<object[]>
+public sealed class ReverseIntegerTestData : TestDataBase<ReverseIntegerTestData>
 {
-    public static IEnumerable<object[]> GetTestData()
-        => new ReverseIntegerTestData();
-        
-    public IEnumerator<object[]> GetEnumerator()
+    protected override ITestCaseBuilder ConstructTestCases()
     {
-        yield return Case(
-            12,
-            21
-        );
-        yield return Case(
-            int.MaxValue,
-            0
-        );
-        yield return Case(
-            int.MinValue,
-            0
-        );
-        yield return Case(
-            123_456_789,
-            987_654_321
-        );
-        yield return Case(
-            -123_456_789,
-            -987_654_321
-        );
-        yield return Case(
-            1_000_000_008,
-            0
-        );
+        return Cases<int, int>()
+            .Add(
+                12, 
+                21)
+            .Add(
+                int.MaxValue, 
+                0)
+            .Add(
+                int.MinValue, 
+                0)
+            .Add(
+                123_456_789, 
+                987_654_321)
+            .Add(
+                -123_456_789, 
+                -987_654_321)
+            .Add(
+                1_000_000_008, 
+                0);
     }
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
-    private static object[] Case(int x, int expectedResult)
-        => [x, expectedResult];
 }

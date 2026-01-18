@@ -1,34 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace Solutions.Tests.Data.Strings.Easy;
 
-public sealed class ReverseStringTestData : IEnumerable<object[]>
+public sealed class ReverseStringTestData : TestDataBase<ReverseStringTestData>
 {
-    public static IEnumerable<object> GetTestData()
-        => new ReverseStringTestData();
-        
-    public IEnumerator<object[]> GetEnumerator()
+    protected override ITestCaseBuilder ConstructTestCases()
     {
-        yield return Case(
-            "abba",
-            "abba"
-        );
-        yield return Case(
-            "dada",
-            "adad"
-        );
-        yield return Case(
-            "abcdefghijk",
-            "kjihgfedcba"
-        );
-        yield return Case(
-            "12#90*.\\$@",
-            "@$\\.*09#21"
-        );
+        return Cases<char[], char[]>()
+            .Add(
+                Charr("abba"), 
+                Charr("abba"))
+            .Add(
+                Charr("dada"), 
+                Charr("adad"))
+            .Add(
+                Charr("abcdefghijk"), 
+                Charr("kjihgfedcba"))
+            .Add(
+                Charr("12#90*.\\$@"), 
+                Charr("@$\\.*09#21"));
     }
 
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-    private static object[] Case(string text, string expectedText)
-        => [text.ToCharArray(), expectedText.ToCharArray()];
+    private static char[] Charr(string s)
+        => s.ToCharArray();
 }

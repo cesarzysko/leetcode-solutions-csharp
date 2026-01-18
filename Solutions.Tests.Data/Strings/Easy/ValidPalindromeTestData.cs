@@ -1,47 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace Solutions.Tests.Data.Strings.Easy;
 
-public class ValidPalindromeTestData : IEnumerable<object[]>
+public class ValidPalindromeTestData : TestDataBase<ValidPalindromeTestData>
 {
-    public static IEnumerable<object[]> GetTestData()
-        => new ValidPalindromeTestData();
-    
-    public IEnumerator<object[]> GetEnumerator()
+    protected override ITestCaseBuilder ConstructTestCases()
     {
-        yield return Case(
-            "A man, a plan, a canal: Panama",
-            true
-        );
-        yield return Case(
-            "race a car",
-            false
-        );
-        yield return Case(
-            " ",
-            true
-        );
-        yield return Case(
-            "1 2 34 .321",
-            true
-        );
-        yield return Case(
-            "Madam, I'm Adam",
-            true
-        );
-        yield return Case(
-            "!M@ad--am, I'\\m Ad#am/",
-            true
-        );
-        yield return Case(
-            "appbappa",
-            false
-        );
+        return Cases<string, bool>()
+            .Add(
+                "A man, a plan, a canal: Panama", 
+                true)
+            .Add(
+                "race a car", 
+                false)
+            .Add(
+                " ", 
+                true)
+            .Add(
+                "1 2 34 .321", 
+                true)
+            .Add(
+                "Madam, I'm Adam", 
+                true)
+            .Add(
+                "!M@ad--am, I'\\m Ad#am/", 
+                true)
+            .Add(
+                "appbappa", 
+                false);
     }
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
-    private static object[] Case(string s, bool expectedResult)
-        => [s, expectedResult];
 }

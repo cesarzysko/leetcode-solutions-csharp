@@ -1,44 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace Solutions.Tests.Data.Strings.Easy;
 
-public class ValidAnagramTestData : IEnumerable<object[]>
+public class ValidAnagramTestData : TestDataBase<ValidAnagramTestData>
 {
-    public static IEnumerable<object[]> GetTestData()
-        => new ValidAnagramTestData();
-    
-    public IEnumerator<object[]> GetEnumerator()
+    protected override ITestCaseBuilder ConstructTestCases()
     {
-        yield return Case(
-            "turtle",
-            "leturt",
-            true
-        );
-        yield return Case(
-            "anagram",
-            "nagamam",
-            false
-        );
-        yield return Case(
-            "abba",
-            "baab",
-            true
-        );
-        yield return Case(
-            "anagrram",
-            "anagrramm",
-            false
-        );
-        yield return Case(
-            "anagramm",
-            "anagrammm",
-            false
-        );
+        return GetTestCaseBuilder<string, string, bool>()
+            .Add(
+                "turtle", 
+                "leturt", 
+                true)
+            .Add(
+                "anagram", 
+                "nagamam", 
+                false)
+            .Add(
+                "abba", 
+                "baab", 
+                true)
+            .Add(
+                "anagrram", 
+                "anagrramm", 
+                false)
+            .Add(
+                "anagramm", 
+                "anagrammm", 
+                false);
     }
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
-    private static object[] Case(string s, string t, bool expectedResult)
-        => [s, t, expectedResult];
 }

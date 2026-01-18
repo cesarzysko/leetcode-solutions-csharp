@@ -1,31 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace Solutions.Tests.Data.Strings.Easy;
 
-public sealed class FirstUniqueCharacterInAStringTestData : IEnumerable<object[]>
+public sealed class FirstUniqueCharacterInAStringTestData : TestDataBase<FirstUniqueCharacterInAStringTestData>
 {
-    public static IEnumerable<object[]> GetTestData()
-        => new FirstUniqueCharacterInAStringTestData();
-    
-    public IEnumerator<object[]> GetEnumerator()
+    protected override ITestCaseBuilder ConstructTestCases()
     {
-        yield return Case(
-            "a",
-            'a'
-        );
-        yield return Case(
-            "aba",
-            'b'
-        );
-        yield return Case(
-            "abcdefghijklmnopqrstuwvyzabcdefghijklmnopqrstuwyz",
-            'v'
-        );
+        return Cases<string, int>()
+            .Add(
+                "a", 
+                s => s.IndexOf('a'))
+            .Add(
+                "aba", 
+                s => s.IndexOf('b'))
+            .Add(
+                "abcdefghijklmnopqrstuwvyzabcdefghijklmnopqrstuwyz", 
+                s => s.IndexOf('v'));
     }
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
-    private static object[] Case(string s, char uniqueCh)
-        => [s, s.IndexOf(uniqueCh)];
 }
