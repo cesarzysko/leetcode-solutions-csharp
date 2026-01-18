@@ -22,7 +22,7 @@ public abstract class TestDataBase<TSelf> : IEnumerable<object[]>
     protected static ITestCaseBuilder<TArg, TOutput> Cases<TArg, TOutput>()
         => new TestCaseBuilder<TArg, TOutput>();
 
-    protected static ITestCaseBuilder<TArg1, TArg2, TOutput> GetTestCaseBuilder<TArg1, TArg2, TOutput>()
+    protected static ITestCaseBuilder<TArg1, TArg2, TOutput> Cases<TArg1, TArg2, TOutput>()
         => new TestCaseBuilder<TArg1, TArg2, TOutput>();
     
     // Test cases

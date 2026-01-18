@@ -4,7 +4,7 @@ public sealed class RotateArrayTestData : TestDataBase<RotateArrayTestData>
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return GetTestCaseBuilder<int[], int, int[]>()
+        return Cases<int[], int, int[]>()
             .Add(
                 [1, 2, 3, 4, 5],
                 0,

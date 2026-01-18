@@ -4,7 +4,7 @@ public class ValidAnagramTestData : TestDataBase<ValidAnagramTestData>
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return GetTestCaseBuilder<string, string, bool>()
+        return Cases<string, string, bool>()
             .Add(
                 "turtle", 
                 "leturt", 

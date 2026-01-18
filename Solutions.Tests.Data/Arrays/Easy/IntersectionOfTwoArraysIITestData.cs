@@ -4,7 +4,7 @@ public sealed class IntersectionOfTwoArraysIITestData : TestDataBase<Intersectio
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return GetTestCaseBuilder<int[], int[], int[]>()
+        return Cases<int[], int[], int[]>()
             .Add(
                 [0],
                 [1],
