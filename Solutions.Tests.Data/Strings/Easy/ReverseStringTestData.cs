@@ -4,21 +4,20 @@ public sealed class ReverseStringTestData : TestDataBase<ReverseStringTestData>
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return Cases<char[], char[]>()
+        return Cases<string, string>()
+            .DefineCustomArgConverter(s => [s.ToCharArray()])
+            .DefineCustomOutConverter(s => [s.ToCharArray()])
             .Add(
-                Charr("abba"), 
-                Charr("abba"))
+                "abba", 
+                "abba")
             .Add(
-                Charr("dada"), 
-                Charr("adad"))
+                "dada", 
+                "adad")
             .Add(
-                Charr("abcdefghijk"), 
-                Charr("kjihgfedcba"))
+                "abcdefghijk", 
+                "kjihgfedcba")
             .Add(
-                Charr("12#90*.\\$@"), 
-                Charr("@$\\.*09#21"));
+                "12#90*.\\$@", 
+                "@$\\.*09#21");
     }
-
-    private static char[] Charr(string s)
-        => s.ToCharArray();
 }

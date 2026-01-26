@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Solutions.Tests.Data;
 
@@ -22,73 +21,62 @@ public abstract class TestDataBase<TSelf> : IEnumerable<object[]>
     protected static ITestCaseBuilder<TArg, TOutput> Cases<TArg, TOutput>()
         => new TestCaseBuilder<TArg, TOutput>();
 
-    protected static ITestCaseBuilder<TArg1, TArg2, TOutput> Cases<TArg1, TArg2, TOutput>()
-        => new TestCaseBuilder<TArg1, TArg2, TOutput>();
-    
-    // Test cases
-    private interface ITestCase
+    private sealed class TestCaseBuilder<TArg, TOut> : ITestCaseBuilder<TArg, TOut>
     {
-        object[] Convert();
-    }
-
-    private sealed record TestCase<TArg, TOutput>(
-        TArg Arg,
-        TOutput Output
-    ) : ITestCase
-    {
-        object[] ITestCase.Convert()
-            => [Arg!, Output!];
-    }
-
-    private sealed record TestCase<TArg1, TArg2, TOutput>(
-        TArg1 Arg1,
-        TArg2 Arg2,
-        TOutput Output
-    ) : ITestCase
-    {
-        object[] ITestCase.Convert()
-            => [Arg1!, Arg2!, Output!];
-    }
-
-    // Test case builders
-    private abstract class TestCaseBuilderBase : ITestCaseBuilder
-    {
-        private readonly List<ITestCase> _list = [];
+        private readonly List<object[]> _testData = [];
         
-        IEnumerable<object[]> ITestCaseBuilder.Build()
+        private Func<TArg, object[]> _argConverter = DefaultConverter;
+        private Func<TOut, object[]> _outputConverter = DefaultConverter;
+        private Func<TArg, TOut, object[]>? _outputGenerator;
+        
+        public IEnumerable<object[]> Build()
         {
-            return _list.Select(testCase => testCase.Convert());
+            return _testData.ToArray();
         }
-
-        protected void Add(ITestCase testCase)
+        
+        public ITestCaseBuilder<TArg, TOut> DefineCustomArgConverter(Func<TArg, object[]> converter)
         {
-            _list.Add(testCase);
-        }
-    }
-
-    private sealed class TestCaseBuilder<TArg, TOutput> : TestCaseBuilderBase, ITestCaseBuilder<TArg, TOutput>
-    {
-        public ITestCaseBuilder<TArg, TOutput> Add(TArg arg, TOutput output)
-        {
-            ITestCase testCase = new TestCase<TArg, TOutput>(arg, output);
-            Add(testCase);
+            _argConverter = converter;
             return this;
         }
 
-        public ITestCaseBuilder<TArg, TOutput> Add(TArg arg, Func<TArg, TOutput> outputFactory)
+        public ITestCaseBuilder<TArg, TOut> DefineCustomOutConverter(Func<TOut, object[]> converter)
         {
-            TOutput output = outputFactory(arg);
-            return Add(arg, output);
-        }
-    }
-
-    private sealed class TestCaseBuilder<TArg1, TArg2, TOutput> : TestCaseBuilderBase, ITestCaseBuilder<TArg1, TArg2, TOutput>
-    {
-        public ITestCaseBuilder<TArg1, TArg2, TOutput> Add(TArg1 arg1, TArg2 arg2, TOutput output)
-        {
-            ITestCase testCase = new TestCase<TArg1, TArg2, TOutput>(arg1, arg2, output);
-            Add(testCase);
+            _outputConverter = converter;
             return this;
+        }
+
+        public ITestCaseBuilder<TArg, TOut> DefineCustomOutGenerator(Func<TArg, TOut, object[]> generator)
+        {
+            _outputGenerator = generator;
+            return this;
+        }
+        
+        public ITestCaseBuilder<TArg, TOut> Add(TArg arg, TOut output)
+        {
+            object[] cArg = _argConverter.Invoke(arg);
+            object[] cOut = _outputGenerator == null 
+                ? _outputConverter.Invoke(output)
+                : _outputGenerator.Invoke(arg, output);
+
+            int cArgN = cArg.Length;
+            int cOutN = cOut.Length;
+            object[] data = new object[cArgN + cOutN];
+            Array.Copy(cArg, 0, data, 0, cArgN);
+            Array.Copy(cOut, 0, data, cArgN, cOutN);
+            
+            Add(data);
+            return this;
+        }
+
+        private static object[] DefaultConverter<T>(T var)
+        {
+            return [var!];
+        }
+        
+        private void Add(object[] testData)
+        {
+            _testData.Add(testData);
         }
     }
 }
@@ -98,17 +86,13 @@ public interface ITestCaseBuilder
     IEnumerable<object[]> Build();
 }
 
-public interface ITestCaseBuilder<TArg, in TOutput> : ITestCaseBuilder
+public interface ITestCaseBuilder<TArg, TOut> : ITestCaseBuilder
 {
-    ITestCaseBuilder<TArg, TOutput> Add(TArg arg, TOutput output);
-    
-    ITestCaseBuilder<TArg, TOutput> Add(
-        TArg arg,
-        Func<TArg, TOutput> outputFactory
-    );
-}
+    ITestCaseBuilder<TArg, TOut> DefineCustomArgConverter(Func<TArg, object[]> converter);
 
-public interface ITestCaseBuilder<in TArg1, in TArg2, in TOutput> : ITestCaseBuilder
-{
-    ITestCaseBuilder<TArg1, TArg2, TOutput> Add(TArg1 arg1, TArg2 arg2, TOutput output);
+    ITestCaseBuilder<TArg, TOut> DefineCustomOutConverter(Func<TOut, object[]> converter);
+    
+    ITestCaseBuilder<TArg, TOut> DefineCustomOutGenerator(Func<TArg, TOut, object[]> generator);
+    
+    ITestCaseBuilder<TArg, TOut> Add(TArg arg, TOut output);
 }

@@ -4,26 +4,22 @@ public class ValidAnagramTestData : TestDataBase<ValidAnagramTestData>
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return Cases<string, string, bool>()
+        return Cases<(string s1, string s2), bool>()
+            .DefineCustomArgConverter(args => [args.s1, args.s2])
             .Add(
-                "turtle", 
-                "leturt", 
+                ("turtle", "leturt"), 
                 true)
             .Add(
-                "anagram", 
-                "nagamam", 
+                ("anagram", "nagamam"), 
                 false)
             .Add(
-                "abba", 
-                "baab", 
+                ("abba", "baab"), 
                 true)
             .Add(
-                "anagrram", 
-                "anagrramm", 
+                ("anagrram", "anagrramm"), 
                 false)
             .Add(
-                "anagramm", 
-                "anagrammm", 
+                ("anagramm", "anagrammm"), 
                 false);
     }
 }

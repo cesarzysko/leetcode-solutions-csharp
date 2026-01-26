@@ -4,15 +4,16 @@ public sealed class FirstUniqueCharacterInAStringTestData : TestDataBase<FirstUn
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return Cases<string, int>()
+        return Cases<string, char>()
+            .DefineCustomOutGenerator((s, c) => [s.IndexOf(c)])
             .Add(
                 "a", 
-                s => s.IndexOf('a'))
+                'a')
             .Add(
                 "aba", 
-                s => s.IndexOf('b'))
+                'b')
             .Add(
                 "abcdefghijklmnopqrstuwvyzabcdefghijklmnopqrstuwyz", 
-                s => s.IndexOf('v'));
+                'v');
     }
 }
