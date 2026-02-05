@@ -14,8 +14,8 @@ public static class LongestCommonPrefix
     /// <summary>
     /// Implementation of the "Longest Common Prefix" LeetCode problem.
     /// </summary>
-    /// <param name="strings"></param>
-    /// <returns></returns>
+    /// <param name="strings">An array of strings on which the longest common prefix is looked for.</param>
+    /// <returns>The longest common prefix for the provided array.</returns>
     public static string Solution(string[] strings)
     {
         Array.Sort(strings);

@@ -12,8 +12,8 @@ public static class ReverseInteger
     /// <summary>
     /// Implementation of the "Reverse Integer" LeetCode problem.
     /// </summary>
-    /// <param name="x"></param>
-    /// <returns></returns>
+    /// <param name="x">The integer to reverse.</param>
+    /// <returns>The reversed integer.</returns>
     public static int Solution(int x)
     {
         long reverse = 0;

@@ -12,9 +12,9 @@ public static class ImplementStrStr
     /// <summary>
     /// Implementation of the "Implement strStr()" LeetCode problem.
     /// </summary>
-    /// <param name="haystack"></param>
-    /// <param name="needle"></param>
-    /// <returns></returns>
+    /// <param name="haystack">The source string in which the needle is searched for.</param>
+    /// <param name="needle">The string looked for in the haystack.</param>
+    /// <returns>The index of the first occurance of needle in haystack, or -1 if none.</returns>
     public static int Solution(string haystack, string needle)
     {
         int hN = haystack.Length;

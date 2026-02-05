@@ -9,30 +9,31 @@ namespace Solutions.Strings.Easy;
 /// </summary>
 public static class ValidAnagram
 {
+    private const int CountSize = 'z' - 'a' + 1;
+
     /// <summary>
     /// Implementation of the "Valid Anagram" LeetCode problem.
     /// </summary>
-    /// <param name="s"></param>
-    /// <param name="t"></param>
-    /// <returns></returns>
-    public static bool Solution(string s, string t)
+    /// <param name="str1">The first string to compare for a valid anagram.</param>
+    /// <param name="str2">The second string to compare for a valid anagram.</param>
+    /// <returns>Whether the second string is a valid anagram of the first one or not.</returns>
+    public static bool Solution(string str1, string str2)
     {
-        if (s.Length != t.Length)
+        if (str1.Length != str2.Length)
         {
             return false;
         }
 
-        int n = s.Length;
-        int c = 'z' - 'a' + 1;
-        int[] count = new int[c];
+        int n = str1.Length;
+        int[] count = new int[CountSize];
 
         for (int i = 0; i < n; i++)
         {
-            count[s[i] - 'a']++;
-            count[t[i] - 'a']--;
+            count[str1[i] - 'a']++;
+            count[str2[i] - 'a']--;
         }
 
-        for (int i = 0; i < c; ++i)
+        for (int i = 0; i < CountSize; ++i)
         {
             if (count[i] != 0)
             {

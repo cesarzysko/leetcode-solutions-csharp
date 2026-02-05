@@ -15,27 +15,27 @@ public static class StringToIntegerAtoi
     /// <summary>
     /// Implementation of the "String to Integer (atoi)" LeetCode problem.
     /// </summary>
-    /// <param name="s"></param>
-    /// <returns></returns>
-    public static int Solution(string s)
+    /// <param name="str">The string to be converted into an integer.</param>
+    /// <returns>The string converted to an integer, or 0 if invalid.</returns>
+    public static int Solution(string str)
     {
         int i = 0;
-        int n = s.Length;
+        int n = str.Length;
         StringBuilder numBuilder = new(n);
 
-        while (i < n && s[i] == ' ')
+        while (i < n && str[i] == ' ')
         {
             ++i;
         }
 
-        if (i < n && (s[i] == '-' || s[i] == '+'))
+        if (i < n && (str[i] == '-' || str[i] == '+'))
         {
-            numBuilder.Append(s[i++]);
+            numBuilder.Append(str[i++]);
         }
 
-        while (i < n && char.IsDigit(s[i]))
+        while (i < n && char.IsDigit(str[i]))
         {
-            numBuilder.Append(s[i++]);
+            numBuilder.Append(str[i++]);
         }
 
         string num = numBuilder.ToString();

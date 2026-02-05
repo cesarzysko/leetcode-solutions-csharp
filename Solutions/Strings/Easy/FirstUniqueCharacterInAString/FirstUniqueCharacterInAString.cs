@@ -14,16 +14,16 @@ public static class FirstUniqueCharacterInAString
     /// <summary>
     /// Implementation of the "First Unique Character in a String" LeetCode problem.
     /// </summary>
-    /// <param name="s"></param>
-    /// <returns></returns>
-    public static int Solution(string s)
+    /// <param name="str">The string to find the first unique character in.</param>
+    /// <returns>The index of the first unique character in the given string, or -1 if none.</returns>
+    public static int Solution(string str)
     {
         int[] uniqueCharIndexes = new int['z' - 'a' + 1];
         Array.Fill(uniqueCharIndexes, -1);
-        int n = s.Length;
+        int n = str.Length;
         for (int i = 0; i < n; ++i)
         {
-            char c = s[i];
+            char c = str[i];
             int cIndex = c - 'a';
             if (uniqueCharIndexes[cIndex] == -1) // Does not occur in string s
             {
