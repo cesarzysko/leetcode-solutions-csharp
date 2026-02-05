@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.NUnit.Strings.Easy;
 
 [TestFixture]
 public class ValidAnagramTest
@@ -12,8 +12,11 @@ public class ValidAnagramTest
     {
         bool firstResult = ValidAnagram.Solution(s, t);
         bool secondResult = ValidAnagram.Solution(t, s);
-        
-        Assert.That(firstResult, Is.EqualTo(expectedResult));
-        Assert.That(secondResult, Is.EqualTo(expectedResult));
+
+        using (Assert.EnterMultipleScope())
+        {
+            Assert.That(firstResult, Is.EqualTo(expectedResult));
+            Assert.That(secondResult, Is.EqualTo(expectedResult));
+        }
     }
 }

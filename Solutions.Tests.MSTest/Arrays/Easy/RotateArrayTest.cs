@@ -1,7 +1,7 @@
+namespace Solutions.Tests.MSTest.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.MSTest.Arrays.Easy;
 
 [TestClass]
 public sealed class RotateArrayTest

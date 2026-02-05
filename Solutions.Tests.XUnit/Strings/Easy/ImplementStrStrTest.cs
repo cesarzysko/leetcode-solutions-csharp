@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.xUnit.Strings.Easy;
 
 public class ImplementStrStrTest
 {

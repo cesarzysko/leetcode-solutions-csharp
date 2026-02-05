@@ -1,20 +1,20 @@
+namespace Solutions.Tests.Data;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Solutions.Tests.Data;
-
-public abstract class TestDataBase<TSelf> : IEnumerable<object[]> 
+public abstract class TestDataBase<TSelf> : IEnumerable<object[]>
     where TSelf : TestDataBase<TSelf>, new()
 {
     public static IEnumerable<object[]> GetTestData()
         => new TSelf();
 
     public IEnumerator<object[]> GetEnumerator()
-        => ConstructTestCases().Build().GetEnumerator();
+        => this.ConstructTestCases().Build().GetEnumerator();
 
-    IEnumerator IEnumerable.GetEnumerator() 
-        => GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator()
+        => this.GetEnumerator();
 
     protected abstract ITestCaseBuilder ConstructTestCases();
 
@@ -23,49 +23,49 @@ public abstract class TestDataBase<TSelf> : IEnumerable<object[]>
 
     private sealed class TestCaseBuilder<TArg, TOut> : ITestCaseBuilder<TArg, TOut>
     {
-        private readonly List<object[]> _testData = [];
-        
-        private Func<TArg, object[]> _argConverter = DefaultConverter;
-        private Func<TOut, object[]> _outputConverter = DefaultConverter;
-        private Func<TArg, TOut, object[]>? _outputGenerator;
-        
+        private readonly List<object[]> testData = [];
+
+        private Func<TArg, object[]> argConverter = DefaultConverter;
+        private Func<TOut, object[]> outputConverter = DefaultConverter;
+        private Func<TArg, TOut, object[]>? outputGenerator;
+
         public IEnumerable<object[]> Build()
         {
-            return _testData.ToArray();
+            return this.testData.ToArray();
         }
-        
+
         public ITestCaseBuilder<TArg, TOut> DefineCustomArgConverter(Func<TArg, object[]> converter)
         {
-            _argConverter = converter;
+            this.argConverter = converter;
             return this;
         }
 
         public ITestCaseBuilder<TArg, TOut> DefineCustomOutConverter(Func<TOut, object[]> converter)
         {
-            _outputConverter = converter;
+            this.outputConverter = converter;
             return this;
         }
 
         public ITestCaseBuilder<TArg, TOut> DefineCustomOutGenerator(Func<TArg, TOut, object[]> generator)
         {
-            _outputGenerator = generator;
+            this.outputGenerator = generator;
             return this;
         }
-        
+
         public ITestCaseBuilder<TArg, TOut> Add(TArg arg, TOut output)
         {
-            object[] cArg = _argConverter.Invoke(arg);
-            object[] cOut = _outputGenerator == null 
-                ? _outputConverter.Invoke(output)
-                : _outputGenerator.Invoke(arg, output);
+            object[] cArg = this.argConverter.Invoke(arg);
+            object[] cOut = this.outputGenerator == null
+                ? this.outputConverter.Invoke(output)
+                : this.outputGenerator.Invoke(arg, output);
 
             int cArgN = cArg.Length;
             int cOutN = cOut.Length;
             object[] data = new object[cArgN + cOutN];
             Array.Copy(cArg, 0, data, 0, cArgN);
             Array.Copy(cOut, 0, data, cArgN, cOutN);
-            
-            Add(data);
+
+            this.Add(data);
             return this;
         }
 
@@ -73,10 +73,10 @@ public abstract class TestDataBase<TSelf> : IEnumerable<object[]>
         {
             return [var!];
         }
-        
+
         private void Add(object[] testData)
         {
-            _testData.Add(testData);
+            this.testData.Add(testData);
         }
     }
 }
@@ -91,8 +91,8 @@ public interface ITestCaseBuilder<TArg, TOut> : ITestCaseBuilder
     ITestCaseBuilder<TArg, TOut> DefineCustomArgConverter(Func<TArg, object[]> converter);
 
     ITestCaseBuilder<TArg, TOut> DefineCustomOutConverter(Func<TOut, object[]> converter);
-    
+
     ITestCaseBuilder<TArg, TOut> DefineCustomOutGenerator(Func<TArg, TOut, object[]> generator);
-    
+
     ITestCaseBuilder<TArg, TOut> Add(TArg arg, TOut output);
 }

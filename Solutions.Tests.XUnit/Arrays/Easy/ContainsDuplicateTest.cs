@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.xUnit.Arrays.Easy;
 
 public sealed class ContainsDuplicateTest
 {
@@ -9,7 +9,7 @@ public sealed class ContainsDuplicateTest
     [ClassData(typeof(ContainsDuplicateTestData))]
     public void Solution_ContainsDuplicate_Test(int[] nums, bool expectedResult)
     {
-        bool result = ContainsDuplicate.Solution(nums);
-        Assert.Equal(expectedResult, result);
+        bool actualResult = ContainsDuplicate.Solution(nums);
+        Assert.Equal(expectedResult, actualResult);
     }
 }

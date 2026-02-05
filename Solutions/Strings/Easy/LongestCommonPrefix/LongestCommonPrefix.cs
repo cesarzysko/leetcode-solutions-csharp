@@ -1,22 +1,37 @@
-using System;
+// <copyright file="LongestCommonPrefix.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
 
 namespace Solutions.Strings.Easy;
 
+using System;
+
+/// <summary>
+/// Class implementing a solution to the "Longest Common Prefix" LeetCode problem.
+/// </summary>
 public static class LongestCommonPrefix
 {
-    public static string Solution(string[] strs) 
+    /// <summary>
+    /// Implementation of the "Longest Common Prefix" LeetCode problem.
+    /// </summary>
+    /// <param name="strings"></param>
+    /// <returns></returns>
+    public static string Solution(string[] strings)
     {
-        Array.Sort(strs);
-        
-        int n = strs.Length;
-        int maxPrefixL = strs[0].Length;
+        Array.Sort(strings);
+
+        int n = strings.Length;
+        int maxPrefixL = strings[0].Length;
         int p = -1;
-        
+
         while (++p < maxPrefixL)
         {
-            if (strs[0][p] != strs[n - 1][p]) { break; }
+            if (strings[0][p] != strings[n - 1][p])
+            {
+                break;
+            }
         }
-        
-        return strs[0][..p];
+
+        return strings[0][..p];
     }
 }

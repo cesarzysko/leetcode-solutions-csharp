@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.xUnit.Arrays.Easy;
 
 public sealed class SingleNumberTest
 {

@@ -1,10 +1,22 @@
-using System;
+// <copyright file="FirstUniqueCharacterInAString.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
 
 namespace Solutions.Strings.Easy;
 
+using System;
+
+/// <summary>
+/// Class implementing a solution to the "First Unique Character in a String" LeetCode problem.
+/// </summary>
 public static class FirstUniqueCharacterInAString
 {
-    public static int Solution(string s) 
+    /// <summary>
+    /// Implementation of the "First Unique Character in a String" LeetCode problem.
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public static int Solution(string s)
     {
         int[] uniqueCharIndexes = new int['z' - 'a' + 1];
         Array.Fill(uniqueCharIndexes, -1);
@@ -22,7 +34,7 @@ public static class FirstUniqueCharacterInAString
                 uniqueCharIndexes[cIndex] = -2;
             }
         }
-        
+
         int lowest = -1;
         foreach (int i in uniqueCharIndexes)
         {
@@ -38,7 +50,7 @@ public static class FirstUniqueCharacterInAString
                 lowest = i;
             }
         }
-        
+
         return lowest;
     }
 }

@@ -8,16 +8,16 @@ public sealed class ReverseStringTestData : TestDataBase<ReverseStringTestData>
             .DefineCustomArgConverter(s => [s.ToCharArray()])
             .DefineCustomOutConverter(s => [s.ToCharArray()])
             .Add(
-                "abba", 
+                "abba",
                 "abba")
             .Add(
-                "dada", 
+                "dada",
                 "adad")
             .Add(
-                "abcdefghijk", 
+                "abcdefghijk",
                 "kjihgfedcba")
             .Add(
-                "12#90*.\\$@", 
+                "12#90*.\\$@",
                 "@$\\.*09#21");
     }
 }

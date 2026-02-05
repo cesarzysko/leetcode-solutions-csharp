@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.NUnit.Strings.Easy;
 
 [TestFixture]
 public sealed class FirstUniqueCharacterInAStringTest
@@ -10,7 +10,7 @@ public sealed class FirstUniqueCharacterInAStringTest
     [TestCaseSource(typeof(FirstUniqueCharacterInAStringTestData))]
     public void Solution_FirstUniqueChar_Test(string s, int expectedChIndex)
     {
-        int chIndex = FirstUniqueCharacterInAString.Solution(s);
-        Assert.That(chIndex, Is.EqualTo(expectedChIndex));
+        int actualChIndex = FirstUniqueCharacterInAString.Solution(s);
+        Assert.That(actualChIndex, Is.EqualTo(expectedChIndex));
     }
 }

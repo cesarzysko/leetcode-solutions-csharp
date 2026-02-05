@@ -6,19 +6,19 @@ public class StringToIntegerAtoiTestData : TestDataBase<StringToIntegerAtoiTestD
     {
         return Cases<string, int>()
             .Add(
-                "42", 
+                "42",
                 42)
             .Add(
-                "-042", 
+                "-042",
                 -42)
             .Add(
-                "1337c0d3", 
+                "1337c0d3",
                 1337)
             .Add(
-                "0-1", 
+                "0-1",
                 0)
             .Add(
-                "words and 987", 
+                "words and 987",
                 0);
     }
 }

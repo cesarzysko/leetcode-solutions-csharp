@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.NUnit.Arrays.Easy;
 
 [TestFixture]
 public sealed class IntersectionOfTwoArraysIITest
@@ -27,11 +27,11 @@ public sealed class IntersectionOfTwoArraysIITest
         for (int i = 0; i < rK; ++i)
         {
             int value = result[i];
-            Assert.Multiple(() =>
+            using (Assert.EnterMultipleScope())
             {
                 Assert.That(value, Is.InRange(0, 1000));
                 Assert.That(--counts[value], Is.GreaterThanOrEqualTo(0), $"Unexpected extra value \"{value}\".");
-            });
+            }
         }
     }
 }

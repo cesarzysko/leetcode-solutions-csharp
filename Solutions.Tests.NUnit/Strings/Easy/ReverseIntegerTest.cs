@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.NUnit.Strings.Easy;
 
 [TestFixture]
 public sealed class ReverseIntegerTest
@@ -10,7 +10,7 @@ public sealed class ReverseIntegerTest
     [TestCaseSource(typeof(ReverseIntegerTestData))]
     public void Solution_ReverseInteger_Test(int x, int expectedResult)
     {
-        int result = ReverseInteger.Solution(x);
-        Assert.That(result, Is.EqualTo(expectedResult));
+        int actualResult = ReverseInteger.Solution(x);
+        Assert.That(actualResult, Is.EqualTo(expectedResult));
     }
 }

@@ -1,17 +1,17 @@
+namespace Solutions.Tests.MSTest.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.MSTest.Strings.Easy;
 
 [TestClass]
 public class LongestCommonPrefixTest
 {
     [TestMethod]
     [FromTestData(typeof(LongestCommonPrefixTestData))]
-    public void Solution_LongestCommonPrefix_Test(string[] strs, string expectedResult)
+    public void Solution_LongestCommonPrefix_Test(string[] strings, string expectedResult)
     {
-        string actualResult = LongestCommonPrefix.Solution(strs);
-        
+        string actualResult = LongestCommonPrefix.Solution(strings);
+
         Assert.AreEqual(expectedResult, actualResult);
     }
 }

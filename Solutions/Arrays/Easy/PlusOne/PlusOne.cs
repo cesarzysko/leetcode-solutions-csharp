@@ -1,10 +1,22 @@
-using System;
+// <copyright file="PlusOne.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
 
 namespace Solutions.Arrays.Easy;
 
+using System;
+
+/// <summary>
+/// Class implementing a solution to the "Plus One" LeetCode problem.
+/// </summary>
 public static class PlusOne
 {
-    public static int[] Solution(int[] digits) 
+    /// <summary>
+    /// Implementation of the "Plus One" LeetCode problem.
+    /// </summary>
+    /// <param name="digits">An array of digits representing a number.</param>
+    /// <returns>An array of digits representing a number after incrementing the given number by one.</returns>
+    public static int[] Solution(int[] digits)
     {
         return Recursive(digits, digits.Length - 1);
     }

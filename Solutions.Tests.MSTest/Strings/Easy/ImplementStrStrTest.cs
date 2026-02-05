@@ -1,7 +1,7 @@
+namespace Solutions.Tests.MSTest.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.MSTest.Strings.Easy;
 
 [TestClass]
 public class ImplementStrStrTest

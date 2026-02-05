@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.NUnit.Arrays.Easy;
 
 [TestFixture]
 public sealed class MoveZeroesTest
@@ -12,9 +12,12 @@ public sealed class MoveZeroesTest
     {
         MoveZeroes.Solution(nums);
 
-        int eK = expectedNums.Length;
-        int rK = nums.Length;
-        Assert.That(rK, Is.EqualTo(eK));
-        Assert.That(nums, Is.EqualTo(expectedNums));
+        int expectedK = expectedNums.Length;
+        int actualK = nums.Length;
+        using (Assert.EnterMultipleScope())
+        {
+            Assert.That(actualK, Is.EqualTo(expectedK));
+            Assert.That(nums, Is.EqualTo(expectedNums));
+        }
     }
 }

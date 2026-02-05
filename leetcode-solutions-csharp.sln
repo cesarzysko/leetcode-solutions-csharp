@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solutions", "Solutions\Solutions.csproj", "{EFB2FB39-4A62-4DFD-8B07-6DE6CA98FDA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solutions.Tests.xUnit", "Solutions.Tests.xUnit\Solutions.Tests.xUnit.csproj", "{4F3E7234-DAEC-4045-9A9E-8C9ED32A8E1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solutions.Tests.XUnit", "Solutions.Tests.XUnit\Solutions.Tests.XUnit.csproj", "{4F3E7234-DAEC-4045-9A9E-8C9ED32A8E1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solutions.Tests.NUnit", "Solutions.Tests.NUnit\Solutions.Tests.NUnit.csproj", "{9742B007-CD27-4E19-8B45-AE989DAF57F0}"
 EndProject

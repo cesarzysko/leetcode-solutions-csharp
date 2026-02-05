@@ -4,8 +4,8 @@ public sealed class RotateArrayTestData : TestDataBase<RotateArrayTestData>
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return Cases<(int[] arr, int rot), int[]>()
-            .DefineCustomArgConverter(args => [args.arr, args.rot])
+        return Cases<(int[] Arr, int Rot), int[]>()
+            .DefineCustomArgConverter(args => [args.Arr, args.Rot])
             .Add(
                 ([1, 2, 3, 4, 5], 0),
                 [1, 2, 3, 4, 5])

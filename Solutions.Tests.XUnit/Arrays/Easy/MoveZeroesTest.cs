@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.xUnit.Arrays.Easy;
 
 public sealed class MoveZeroesTest
 {
@@ -10,9 +10,9 @@ public sealed class MoveZeroesTest
     public void Solution_MoveZeroes_Test(int[] nums, int[] expectedNums)
     {
         MoveZeroes.Solution(nums);
-        int eK = expectedNums.Length;
-        int rK = nums.Length;
-        Assert.Equal(eK, rK);
+        int expectedK = expectedNums.Length;
+        int actualK = nums.Length;
+        Assert.Equal(expectedK, actualK);
         Assert.Equal(expectedNums, nums);
     }
 }

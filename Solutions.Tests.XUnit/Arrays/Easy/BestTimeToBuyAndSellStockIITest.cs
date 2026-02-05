@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.xUnit.Arrays.Easy;
 
 public sealed class BestTimeToBuyAndSellStockIITest
 {
@@ -9,7 +9,7 @@ public sealed class BestTimeToBuyAndSellStockIITest
     [ClassData(typeof(BestTimeToBuyAndSellStocksIITestData))]
     public void Solution_GetMaxProfit_Test(int[] prices, int expectedProfit)
     {
-        int result = BestTimeToBuyAndSellStockII.Solution(prices);
-        Assert.Equal(expectedProfit, result);
+        int actualProfit = BestTimeToBuyAndSellStockII.Solution(prices);
+        Assert.Equal(expectedProfit, actualProfit);
     }
 }

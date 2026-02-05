@@ -4,8 +4,8 @@ public sealed class IntersectionOfTwoArraysIITestData : TestDataBase<Intersectio
 {
     protected override ITestCaseBuilder ConstructTestCases()
     {
-        return Cases<(int[] arr1, int[] arr2), int[]>()
-            .DefineCustomArgConverter(args => [args.arr1, args.arr2])
+        return Cases<(int[] FirstArray, int[] SecondArray), int[]>()
+            .DefineCustomArgConverter(args => [args.FirstArray, args.SecondArray])
             .Add(
                 ([0], [1]),
                 [])

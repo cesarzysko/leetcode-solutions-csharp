@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.NUnit.Arrays.Easy;
 
 [TestFixture]
 public sealed class PlusOneTest
@@ -10,14 +10,14 @@ public sealed class PlusOneTest
     [TestCaseSource(typeof(PlusOneTestData))]
     public void Solution_PlusOne_Test(int[] digits, int[] expectedDigits)
     {
-        int[] result = PlusOne.Solution(digits);
+        int[] actualDigits = PlusOne.Solution(digits);
 
-        int rK = result.Length;
-        int eK = expectedDigits.Length;
-        Assert.Multiple(() =>
+        int actualK = actualDigits.Length;
+        int expectedK = expectedDigits.Length;
+        using (Assert.EnterMultipleScope())
         {
-            Assert.That(rK, Is.EqualTo(eK));
-            Assert.That(result, Is.EqualTo(expectedDigits));
-        });
+            Assert.That(actualK, Is.EqualTo(expectedK));
+            Assert.That(actualDigits, Is.EqualTo(expectedDigits));
+        }
     }
 }

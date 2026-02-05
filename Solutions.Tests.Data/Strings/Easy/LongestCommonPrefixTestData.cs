@@ -19,7 +19,7 @@ public class LongestCommonPrefixTestData : TestDataBase<LongestCommonPrefixTestD
             [
                 "abc", "def", "ghi"
             ],
-            "")
+            string.Empty)
             .Add(
             [
                 "prefix", "prefixabc", "prefixdef"

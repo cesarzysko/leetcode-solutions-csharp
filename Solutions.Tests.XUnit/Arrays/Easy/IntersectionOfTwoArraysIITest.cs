@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.xUnit.Arrays.Easy;
 
 public sealed class IntersectionOfTwoArraysIITest
 {
@@ -10,18 +10,18 @@ public sealed class IntersectionOfTwoArraysIITest
     public void Solution_Intersection_Test(int[] nums1, int[] nums2, int[] expectedIntersection)
     {
         int[] result = IntersectionOfTwoArraysII.Solution(nums1, nums2);
-        int rK = result.Length;
-        int eK = expectedIntersection.Length;
-        Assert.Equal(eK, rK);
+        int actualK = result.Length;
+        int expectedK = expectedIntersection.Length;
+        Assert.Equal(expectedK, actualK);
         short[] counts = new short[1001];
 
-        for (int i = 0; i < eK; ++i)
+        for (int i = 0; i < expectedK; ++i)
         {
             int value = expectedIntersection[i];
             ++counts[value];
         }
 
-        for (int i = 0; i < rK; ++i)
+        for (int i = 0; i < actualK; ++i)
         {
             int value = result[i];
             Assert.InRange(value, 0, 1000);

@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.xUnit.Arrays.Easy;
 
 public sealed class PlusOneTest
 {
@@ -10,9 +10,9 @@ public sealed class PlusOneTest
     public void Solution_PlusOne_Test(int[] digits, int[] expectedDigits)
     {
         int[] result = PlusOne.Solution(digits);
-        int rK = result.Length;
-        int eK = expectedDigits.Length;
-        Assert.Equal(eK, rK);
+        int actualK = result.Length;
+        int expectedK = expectedDigits.Length;
+        Assert.Equal(expectedK, actualK);
         Assert.Equal(expectedDigits, result);
     }
 }

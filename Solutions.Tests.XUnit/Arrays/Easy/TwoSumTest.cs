@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.xUnit.Arrays.Easy;
 
 public sealed class TwoSumTest
 {
@@ -12,7 +12,7 @@ public sealed class TwoSumTest
         int[] actualResult = TwoSum.Solution(nums, target);
         Assert.Equal(2, actualResult.Length);
         Assert.Equal(expectedResult, actualResult);
-            
+
         int actualTarget = nums[actualResult[0]] + nums[actualResult[1]];
         Assert.Equal(target, actualTarget);
     }

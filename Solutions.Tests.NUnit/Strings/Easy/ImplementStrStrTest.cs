@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.NUnit.Strings.Easy;
 
 [TestFixture]
 public class ImplementStrStrTest

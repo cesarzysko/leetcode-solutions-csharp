@@ -1,7 +1,7 @@
+namespace Solutions.Tests.XUnit.Strings.Easy;
+
 using Solutions.Strings.Easy;
 using Solutions.Tests.Data.Strings.Easy;
-
-namespace Solutions.Tests.xUnit.Strings.Easy;
 
 public sealed class ReverseIntegerTest
 {
@@ -9,7 +9,7 @@ public sealed class ReverseIntegerTest
     [ClassData(typeof(ReverseIntegerTestData))]
     public void Solution_ReverseInteger_Test(int x, int expectedResult)
     {
-        int result = ReverseInteger.Solution(x);
-        Assert.Equal(expectedResult, result);
+        int actualResult = ReverseInteger.Solution(x);
+        Assert.Equal(expectedResult, actualResult);
     }
 }

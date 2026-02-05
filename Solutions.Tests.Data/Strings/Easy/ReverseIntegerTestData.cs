@@ -6,22 +6,22 @@ public sealed class ReverseIntegerTestData : TestDataBase<ReverseIntegerTestData
     {
         return Cases<int, int>()
             .Add(
-                12, 
+                12,
                 21)
             .Add(
-                int.MaxValue, 
+                int.MaxValue,
                 0)
             .Add(
-                int.MinValue, 
+                int.MinValue,
                 0)
             .Add(
-                123_456_789, 
+                123_456_789,
                 987_654_321)
             .Add(
-                -123_456_789, 
+                -123_456_789,
                 -987_654_321)
             .Add(
-                1_000_000_008, 
+                1_000_000_008,
                 0);
     }
 }

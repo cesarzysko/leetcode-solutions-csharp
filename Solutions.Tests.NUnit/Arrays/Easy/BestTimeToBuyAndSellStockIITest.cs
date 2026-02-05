@@ -1,7 +1,7 @@
+namespace Solutions.Tests.NUnit.Arrays.Easy;
+
 using Solutions.Arrays.Easy;
 using Solutions.Tests.Data.Arrays.Easy;
-
-namespace Solutions.Tests.NUnit.Arrays.Easy;
 
 [TestFixture]
 public sealed class BestTimeToBuyAndSellStockIITest

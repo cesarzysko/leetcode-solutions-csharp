@@ -7,13 +7,13 @@ public sealed class FirstUniqueCharacterInAStringTestData : TestDataBase<FirstUn
         return Cases<string, char>()
             .DefineCustomOutGenerator((s, c) => [s.IndexOf(c)])
             .Add(
-                "a", 
+                "a",
                 'a')
             .Add(
-                "aba", 
+                "aba",
                 'b')
             .Add(
-                "abcdefghijklmnopqrstuwvyzabcdefghijklmnopqrstuwyz", 
+                "abcdefghijklmnopqrstuwvyzabcdefghijklmnopqrstuwyz",
                 'v');
     }
 }
