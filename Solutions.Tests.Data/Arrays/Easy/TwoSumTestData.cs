@@ -1,7 +1,18 @@
+// <copyright file="TwoSumTestData.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.Data.Arrays.Easy;
 
+/// <summary>
+/// Encapsulates test cases for testing "TwoSum".
+/// </summary>
 public sealed class TwoSumTestData : TestDataBase<TwoSumTestData>
 {
+    /// <summary>
+    /// Constructs test cases.
+    /// </summary>
+    /// <returns>Builder containing test cases.</returns>
     protected override ITestCaseBuilder ConstructTestCases()
     {
         return Cases<(int[] Nums, int Sum), int[]>()

@@ -1,7 +1,18 @@
+// <copyright file="ReverseIntegerTestData.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.Data.Strings.Easy;
 
+/// <summary>
+/// Encapsulates test cases for testing "ReverseInteger".
+/// </summary>
 public sealed class ReverseIntegerTestData : TestDataBase<ReverseIntegerTestData>
 {
+    /// <summary>
+    /// Constructs test cases.
+    /// </summary>
+    /// <returns>Builder containing test cases.</returns>
     protected override ITestCaseBuilder ConstructTestCases()
     {
         return Cases<int, int>()

@@ -1,7 +1,18 @@
+// <copyright file="IntersectionOfTwoArraysIITestData.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.Data.Arrays.Easy;
 
+/// <summary>
+/// Encapsulates test cases for testing "IntersectionOfTwoArraysII".
+/// </summary>
 public sealed class IntersectionOfTwoArraysIITestData : TestDataBase<IntersectionOfTwoArraysIITestData>
 {
+    /// <summary>
+    /// Constructs test cases.
+    /// </summary>
+    /// <returns>Builder containing test cases.</returns>
     protected override ITestCaseBuilder ConstructTestCases()
     {
         return Cases<(int[] FirstArray, int[] SecondArray), int[]>()

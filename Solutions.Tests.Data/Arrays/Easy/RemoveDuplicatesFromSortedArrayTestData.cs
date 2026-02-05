@@ -1,7 +1,18 @@
+// <copyright file="RemoveDuplicatesFromSortedArrayTestData.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.Data.Arrays.Easy;
 
+/// <summary>
+/// Encapsulates test cases for testing "RemoveDuplicatesFromSortedArray".
+/// </summary>
 public sealed class RemoveDuplicatesFromSortedArrayTestData : TestDataBase<RemoveDuplicatesFromSortedArrayTestData>
 {
+    /// <summary>
+    /// Constructs test cases.
+    /// </summary>
+    /// <returns>Builder containing test cases.</returns>
     protected override ITestCaseBuilder ConstructTestCases()
     {
         return Cases<int[], int[]>()

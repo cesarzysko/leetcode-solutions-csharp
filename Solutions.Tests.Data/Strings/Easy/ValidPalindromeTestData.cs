@@ -1,7 +1,18 @@
+// <copyright file="ValidPalindromeTestData.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.Data.Strings.Easy;
 
+/// <summary>
+/// Encapsulates test cases for testing "ValidPalindrome".
+/// </summary>
 public class ValidPalindromeTestData : TestDataBase<ValidPalindromeTestData>
 {
+    /// <summary>
+    /// Constructs test cases.
+    /// </summary>
+    /// <returns>Builder containing test cases.</returns>
     protected override ITestCaseBuilder ConstructTestCases()
     {
         return Cases<string, bool>()

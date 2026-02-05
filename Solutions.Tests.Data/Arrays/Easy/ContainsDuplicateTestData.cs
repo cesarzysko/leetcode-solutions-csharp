@@ -1,7 +1,18 @@
+// <copyright file="ContainsDuplicateTestData.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.Data.Arrays.Easy;
 
+/// <summary>
+/// Encapsulates test cases for testing "ContainsDuplicate".
+/// </summary>
 public sealed class ContainsDuplicateTestData : TestDataBase<ContainsDuplicateTestData>
 {
+    /// <summary>
+    /// Constructs test cases.
+    /// </summary>
+    /// <returns>Builder containing test cases.</returns>
     protected override ITestCaseBuilder ConstructTestCases()
     {
         return Cases<int[], bool>()
