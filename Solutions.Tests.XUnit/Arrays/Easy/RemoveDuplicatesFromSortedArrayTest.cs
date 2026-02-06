@@ -1,10 +1,22 @@
+// <copyright file="RemoveDuplicatesFromSortedArrayTest.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.XUnit.Arrays.Easy;
 
-using Solutions.Arrays.Easy;
-using Solutions.Tests.Data.Arrays.Easy;
+using RemoveDuplicatesFromSortedArray = Solutions.Arrays.Easy.RemoveDuplicatesFromSortedArray;
+using RemoveDuplicatesFromSortedArrayTestData = Solutions.Tests.Data.Arrays.Easy.RemoveDuplicatesFromSortedArrayTestData;
 
+/// <summary>
+/// Class implementing tests logic for <see cref="RemoveDuplicatesFromSortedArray"/>.
+/// </summary>
 public sealed class RemoveDuplicatesFromSortedArrayTest
 {
+    /// <summary>
+    /// Tests whether the solution correctly removes duplicates from an array and returns the correct new size.
+    /// </summary>
+    /// <param name="nums">The array containing duplicates.</param>
+    /// <param name="expectedNums">The expected result without duplicates.</param>
     [Theory]
     [ClassData(typeof(RemoveDuplicatesFromSortedArrayTestData))]
     public void Solution_RemoveDuplicates_Test(int[] nums, int[] expectedNums)

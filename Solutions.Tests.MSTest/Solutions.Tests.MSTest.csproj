@@ -33,4 +33,8 @@
       <ProjectReference Include="..\Solutions\Solutions.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="stylecop.json" />
+    </ItemGroup>
+
 </Project>

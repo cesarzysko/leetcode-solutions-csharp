@@ -1,10 +1,23 @@
+// <copyright file="IntersectionOfTwoArraysIITest.cs" company="SPS">
+// Copyright (c) SPS. All rights reserved.
+// </copyright>
+
 namespace Solutions.Tests.XUnit.Arrays.Easy;
 
-using Solutions.Arrays.Easy;
-using Solutions.Tests.Data.Arrays.Easy;
+using IntersectionOfTwoArraysII = Solutions.Arrays.Easy.IntersectionOfTwoArraysII;
+using IntersectionOfTwoArraysIITestData = Solutions.Tests.Data.Arrays.Easy.IntersectionOfTwoArraysIITestData;
 
+/// <summary>
+/// Class implementing tests logic for <see cref="IntersectionOfTwoArraysII"/>.
+/// </summary>
 public sealed class IntersectionOfTwoArraysIITest
 {
+    /// <summary>
+    /// Tests whether the solution returns a proper intersection of two arrays.
+    /// </summary>
+    /// <param name="nums1">The first array.</param>
+    /// <param name="nums2">The second array.</param>
+    /// <param name="expectedIntersection">The expected intersection of both arrays.</param>
     [Theory]
     [ClassData(typeof(IntersectionOfTwoArraysIITestData))]
     public void Solution_Intersection_Test(int[] nums1, int[] nums2, int[] expectedIntersection)
